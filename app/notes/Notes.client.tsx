@@ -59,7 +59,12 @@ const NotesClient = () => {
         </button>
       </header>
       {data && data?.notes.length > 0 && <NoteList notes={data.notes} />}
-      {isError && <ErrorMessage />}
+      {data?.notes.length === 0 && (
+        <ErrorMessage message={"No notes were found, try another search"} />
+      )}
+      {isError && (
+        <ErrorMessage message={"There was an error, please try again..."} />
+      )}
       {!isError && isLoading && <Loader />}
       {isModalOpen && (
         <Modal onClose={closeModal}>
