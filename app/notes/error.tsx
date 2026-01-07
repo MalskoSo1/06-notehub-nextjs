@@ -3,7 +3,7 @@
 const Error = ({ error }: { error: Error }) => {
   return (
     <p className={"text-error"}>
-      Could not fetch note details. {error.message}
+      Could not fetch notes details. {error.message}
     </p>
   );
 };
