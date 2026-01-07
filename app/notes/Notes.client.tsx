@@ -24,6 +24,7 @@ const NotesClient = () => {
     queryKey: ["getNotes", debouncedSearch, page],
     queryFn: () => fetchNotes(debouncedSearch, page, perPage),
     placeholderData: keepPreviousData,
+    refetchOnMount: false,
   });
 
   if (isError) {
